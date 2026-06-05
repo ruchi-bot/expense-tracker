@@ -393,18 +393,7 @@ Auto-deploys to production
 
 ---
 
-## File Size Reference
 
-| Component | Typical Size |
-|-----------|--------------|
-| server.js | ~7 KB |
-| App.js | ~5 KB |
-| Each component JS | ~2-4 KB |
-| Each component CSS | ~2-5 KB |
-| Utility files | ~1-2 KB |
-| Total source code | ~50 KB |
-| Minified bundle | ~150-200 KB |
-| With Recharts | ~250 KB |
 
 ---
 
@@ -417,10 +406,4 @@ Auto-deploys to production
 - **Development**: Single `npm run dev` starts both servers
 - **Production**: Separate deployment processes for flexibility
 
----
 
-For more info:
-- [README.md](./README.md) - Full documentation
-- [QUICKSTART.md](./QUICKSTART.md) - Get started quickly
-- [DEPLOYMENT.md](./DEPLOYMENT.md) - Deploy to production
-- [CONFIGURATION.md](./CONFIGURATION.md) - Configure environment
