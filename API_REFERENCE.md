@@ -2,23 +2,21 @@
 
 Complete API documentation with curl examples for testing.
 
----
+
 
 ## Base URL
 
-```
+
 Development: http://localhost:5000
 Production: https://your-deployed-backend.com
-```
 
----
 
 ## Headers
 
 All requests should include:
-```
+
 Content-Type: application/json
-```
+
 
 For cross-origin requests, CORS is enabled for:
 - `http://localhost:3000` (development frontend)
