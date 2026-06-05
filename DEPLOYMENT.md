@@ -15,7 +15,7 @@ git add .
 git commit -m "Initial commit: Expense Tracker monorepo"
 ```
 
-### 2. Create .gitignore (✅ Already Created)
+### 2. Create .gitignore 
 
 The `.gitignore` file is already set up to exclude:
 - `node_modules/`
@@ -41,7 +41,7 @@ git push -u origin main
 
 ## Part 2: Deploy Backend (Node.js/Express)
 
-### Option A: Deploy on Render (Recommended)
+### Deploy on Render 
 
 **Step 1: Connect GitHub**
 1. Go to https://render.com/
@@ -67,50 +67,20 @@ PORT=5000
 NODE_ENV=production
 FRONTEND_URL=https://expense-tracker-client.vercel.app
 ```
-*(Replace with YOUR frontend URL)*
+*(Replace with my frontend URL)*
 
 **Step 5: Deploy**
 - Click "Create Web Service"
 - Wait for build to complete
 - Your backend URL: `https://expense-tracker-backend.onrender.com`
 
-### Option B: Deploy on Railway
 
-**Step 1: Connect Repository**
-1. Go to https://railway.app/
-2. Click "New Project" → "Deploy from GitHub repo"
-3. Authorize and select your repository
 
-**Step 2: Add Service**
-1. Click "Add Service" → "GitHub Repo"
-2. Select your repo
-
-**Step 3: Configure**
-- Set `ROOT_DIR` to `server`
-- Add environment variables
-
-**Step 4: Deploy**
-- Push to trigger deployment
-- Railway auto-deploys on push
-
-### Option C: Deploy on Heroku
-
-```bash
-# Install Heroku CLI
-# Then:
-cd server
-heroku login
-heroku create your-expense-tracker-backend
-heroku config:set FRONTEND_URL=https://your-frontend.com
-
-# Deploy
-git push heroku main
-```
 
 ### Verify Backend Deployment
 
 ```bash
-# Replace with your deployed backend URL
+# Replace with my deployed backend URL
 curl https://expense-tracker-backend.onrender.com/api/health
 
 # Should return:
@@ -121,7 +91,7 @@ curl https://expense-tracker-backend.onrender.com/api/health
 
 ## Part 3: Deploy Frontend (React)
 
-### Option A: Deploy on Vercel (Recommended)
+### Option A: Deploy on Vercel 
 
 **Step 1: Connect GitHub**
 1. Go to https://vercel.com/
@@ -144,7 +114,7 @@ Add environment variable:
 ```
 REACT_APP_API_URL=https://expense-tracker-backend.onrender.com
 ```
-*(Replace with YOUR backend URL)*
+*(Replace with my backend URL)*
 
 **Step 5: Deploy**
 - Click "Deploy"
@@ -174,24 +144,8 @@ REACT_APP_API_URL=https://expense-tracker-backend.onrender.com
 - Click "Deploy site"
 - Netlify builds and deploys automatically
 
-### Option C: GitHub Pages (Free Hosting)
 
-```bash
-# 1. Add to client/package.json:
-# "homepage": "https://YOUR_USERNAME.github.io/expense-tracker"
 
-# 2. Install gh-pages
-cd client
-npm install --save-dev gh-pages
-
-# 3. Add deploy scripts to package.json:
-# "deploy": "npm run build && gh-pages -d build"
-
-# 4. Deploy
-npm run deploy
-
-# 5. Enable GitHub Pages in repo settings
-```
 
 ### Verify Frontend Deployment
 
@@ -218,10 +172,6 @@ After deploying backend, update frontend environment variable:
 2. Update `REACT_APP_API_URL`
 3. Redeploy manually if needed
 
-**On GitHub Pages:**
-```bash
-# Update client/.env.production with backend URL
-REACT_APP_API_URL=https://your-deployed-backend.com
 
 # Rebuild and deploy
 cd client
@@ -250,7 +200,6 @@ npm run deploy
 **Render:** Similar auto-deploy on push
 - Configure in dashboard
 
-**Railway:** Also auto-deploys on push
 
 ### Workflow
 
@@ -388,9 +337,10 @@ Edit `README.md` and update:
 
 ```markdown
 ## Live Demo Links
+expense-tracker-bektssb77-ruchi-sainis-projects.vercel.app
+- **Frontend (Deployed)**: expense-tracker-bektssb77-ruchi-sainis-projects.vercel.app
+- **Backend (Deployed)**: https://expense-tracker-zx0t.onrender.com
 
-- **Frontend (Deployed)**: [https://expense-tracker-client.vercel.app](https://expense-tracker-client.vercel.app)
-- **Backend (Deployed)**: [https://expense-tracker-backend.onrender.com](https://expense-tracker-backend.onrender.com)
 ```
 
 Push to GitHub!
@@ -404,16 +354,3 @@ Local Development          Git Push              Deployed Production
     ↓                         ↓                            ↓
 localhost:3000       push to GitHub         https://yourfrontend.com
 localhost:5000   →   ↓           ↓        →   https://yourbackend.com
-```
-
-**Congratulations! Your Expense Tracker is live! 🎉**
-
----
-
-For issues, check:
-- Deployment service logs
-- Browser console (Ctrl+Shift+J or F12)
-- Network tab for API errors
-- README.md for API documentation
-
-Need help? Read [CONFIGURATION.md](./CONFIGURATION.md) for more details.
