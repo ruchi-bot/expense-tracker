@@ -651,17 +651,7 @@ curl -v http://localhost:5000/api/expenses
 # Shows headers and full response
 ```
 
----
 
-## Next Steps
-
-1. Run: `npm run dev`
-2. Test with curl or Postman
-3. Monitor frontend Network tab
-4. Check `/server/data/expenses.json` for persistence
-5. Ready for production deployment!
-
----
 
 For more info, see:
 - [README.md](./README.md) - Full documentation
