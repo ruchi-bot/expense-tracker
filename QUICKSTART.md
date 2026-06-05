@@ -1,12 +1,9 @@
-# 🚀 Quick Start Guide
-
-Get the Expense Tracker running in 5 minutes!
 
 ## Prerequisites
 - Node.js (v14+) installed
 - npm (comes with Node.js)
 
-## 1️⃣ Install Dependencies (1 minute)
+## 1️⃣ Install Dependencies 
 
 From the root directory (`Expense_Tracker/`):
 
@@ -19,7 +16,7 @@ This will install all packages for:
 - `/server` backend
 - `/client` frontend
 
-## 2️⃣ Setup Environment Files (1 minute)
+## 2️⃣ Setup Environment Files 
 
 ```bash
 # Create backend .env
@@ -29,7 +26,7 @@ cd server && cp .env.example .env && cd ..
 cd client && cp .env.example .env.local && cd ..
 ```
 
-## 3️⃣ Start Development (Immediate)
+## 3️⃣ Start Development 
 
 **Run both servers at once:**
 ```bash
@@ -50,15 +47,15 @@ cd client
 npm start
 ```
 
-## 4️⃣ Access the App (Immediate)
+## 4️⃣ Access the App 
 
-Open your browser to: **http://localhost:3000**
+Open my browser to: **http://localhost:3000**
 
-✅ You should see the Expense Tracker home page!
+✅  see the Expense Tracker home page!
 
 ## What's Next?
 
-### Add Your First Expense
+### Add My First Expense
 1. Fill in the form on the left
 2. Click "Add Expense"
 3. See it appear in the table below
@@ -100,9 +97,7 @@ curl -X POST http://localhost:5000/api/expenses \
 netstat -ano | findstr :5000
 taskkill /PID <PID> /F
 
-# macOS - Kill on port 5000
-lsof -ti:5000 | xargs kill -9
-```
+
 
 ### Dependencies Not Installing
 
@@ -117,12 +112,6 @@ npm run install-all
 - Check `.env.local` has: `REACT_APP_API_URL=http://localhost:5000`
 - Check browser console for network errors
 
-### See More Help
 
-- Detailed setup: [CONFIGURATION.md](./CONFIGURATION.md)
-- Full documentation: [README.md](./README.md)
-- API details: [README.md](./README.md#api-documentation)
 
----
-
-**That's it! You're now running the Expense Tracker! 🎉**
+**That's it! now running the Expense Tracker! 🎉**
