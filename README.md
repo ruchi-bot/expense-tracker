@@ -10,10 +10,9 @@ A modern, interactive expense tracker web application that helps users log daily
 
 ## Live Demo Links
 
-- **Frontend (Deployed)**: [https://expense-tracker-client.vercel.app](https://expense-tracker-client.vercel.app)
-- **Backend (Deployed)**: [https://expense-tracker-server.onrender.com](https://expense-tracker-server.onrender.com)
+- **Frontend (Deployed)**:expense-tracker-5ljrmqnzc-ruchi-sainis-projects.vercel.app
+- **Backend (Deployed)**: https://expense-tracker-zx0t.onrender.com
 
-> *Note: Update these URLs after deploying your application to actual hosting services (Vercel, Netlify, Render, Railway, etc.)*
 
 ---
 
@@ -259,35 +258,7 @@ No authentication required. Single-user assumption.
   { "error": "Expense not found" }
   ```
 
-#### 6. **Get Summary Statistics**
-- **Method**: `GET`
-- **Path**: `/summary`
-- **Request Body**: None
-- **Response** (200):
-  ```json
-  {
-    "totalThisMonth": 5000,
-    "byCategory": {
-      "Food": 1500,
-      "Transport": 800,
-      "Bills": 2000,
-      "Entertainment": 700
-    },
-    "highestExpense": 2000,
-    "totalExpenses": 15
-  }
-  ```
 
-#### 7. **Health Check**
-- **Method**: `GET`
-- **Path**: `/health`
-- **Response** (200):
-  ```json
-  {
-    "status": "ok",
-    "timestamp": "2024-06-02T12:00:00.000Z"
-  }
-  ```
 
 ### Error Handling
 
@@ -347,14 +318,6 @@ Expense_Tracker/
     └── .gitignore              # Git ignore rules
 ```
 
-### Key Directory Descriptions
-
-| Folder | Purpose |
-|--------|---------|
-| `/server` | Express.js backend with REST API and JSON file storage |
-| `/client` | React frontend with UI components and state management |
-| `/server/data` | Runtime folder where expenses.json is stored (ignored by git) |
-| `/client/src` | React source code with components, utilities, and styling |
 
 ---
 
@@ -366,20 +329,12 @@ Expense_Tracker/
 - ✅ Edit and delete existing expenses
 - ✅ Filter expenses by category and date range
 - ✅ Summary panel with total this month, total per category, highest expense
-
-### Should Have ✅
 - ✅ Pie chart visualization of expenses by category (Recharts)
 - ✅ Currency formatting with Indian Rupee (₹) locale
 - ✅ Form validation - no negative amounts, no future dates, required field validation
-
-### Nice to Have ✅
 - ✅ Export visible expenses as CSV download
 - ✅ Persistence to JSON file in `/server/data/expenses.json`
 
-### Bonus Considerations
-- 🔧 Budget settings per category - *Suggested for Next Steps*
-- 📱 Fully responsive design for mobile devices
-- 🎨 Modern gradient UI with smooth transitions
 
 ---
 
@@ -401,138 +356,6 @@ Expense_Tracker/
    - Difficulty: Low
    - Impact: Help users stay within their budgets
 
-4. **Advanced Analytics** - Only basic summary provided
-   - *Future*: Trend analysis, monthly comparisons, spending predictions
-   - Difficulty: Medium
-   - Impact: Better insights into spending patterns
 
-### Recommended Next Steps (Priority Order)
 
-1. **Database Migration** (High Priority)
-   - Implement PostgreSQL with Sequelize ORM
-   - Set up database migrations and seed scripts
-   - Update API to use database instead of JSON
 
-2. **User Authentication** (High Priority)
-   - Add user login/signup with JWT tokens
-   - Implement password hashing with bcrypt
-   - Create user middleware for authenticated routes
-
-3. **Budget Management** (Medium Priority)
-   - Add budget creation endpoint
-   - Add visual indicators when spending exceeds budget
-   - Send alerts/notifications when approaching limits
-
-4. **Advanced Analytics** (Medium Priority)
-   - Monthly comparison charts
-   - Spending trends over time
-   - Predictive analytics for next month
-
-5. **Data Import/Export** (Low Priority)
-   - Import expenses from CSV
-   - Export to Excel format
-   - Backup and restore functionality
-
-6. **Mobile App** (Low Priority)
-   - React Native version for iOS/Android
-   - Offline-first capability with sync
-
-7. **Testing** (Continuous)
-   - Add unit tests (Jest for React, Mocha for Express)
-   - Integration tests for API endpoints
-   - E2E tests with Cypress or Playwright
-
----
-
-## Deployment Guide
-
-### Deploy Backend (Node.js/Express)
-
-**Option 1: Render (Recommended)**
-1. Push code to GitHub
-2. Go to https://render.com/
-3. Click "New +" → "Web Service"
-4. Connect GitHub repository
-5. Set environment:
-   - Build Command: `npm install`
-   - Start Command: `node server.js`
-   - Working Directory: `server`
-6. Set environment variables in Render dashboard
-7. Deploy!
-
-**Option 2: Railway**
-1. Create account at https://railway.app/
-2. Connect GitHub
-3. Select repository and `/server` folder
-4. Set start command: `npm start`
-5. Deploy!
-
-**Option 3: Heroku**
-```bash
-cd server
-heroku login
-heroku create your-app-name
-git push heroku main
-```
-
-### Deploy Frontend (React)
-
-**Option 1: Vercel (Recommended)**
-1. Push code to GitHub
-2. Go to https://vercel.com/
-3. Click "Add New" → "Project"
-4. Import GitHub repository
-5. Framework: React, Root Directory: `client`
-6. Environment Variables:
-   ```
-   REACT_APP_API_URL=https://your-backend-url.com
-   ```
-7. Deploy!
-
-**Option 2: Netlify**
-1. Go to https://netlify.com/
-2. Click "Add new site" → "Import an existing project"
-3. Connect GitHub, select repo
-4. Build command: `npm run build` (in `/client`)
-5. Publish directory: `build`
-6. Set environment variable
-7. Deploy!
-
-### Important Deployment Notes
-- Update `REACT_APP_API_URL` in frontend to point to deployed backend
-- Update `FRONTEND_URL` in backend `.env` for CORS
-- Ensure backend data file persists (or migrate to database)
-- Test API connectivity after deployment
-- Monitor logs for any errors
-
----
-
-## Contributing
-
-This is a personal project created for demonstration purposes. For local development:
-
-1. Create a feature branch: `git checkout -b feature/amazing-feature`
-2. Commit changes: `git commit -m 'Add amazing feature'`
-3. Push to branch: `git push origin feature/amazing-feature`
-4. Open a Pull Request
-
----
-
-## License
-
-This project is licensed under the ISC License - see the LICENSE file for details.
-
----
-
-## Support & Questions
-
-For issues or questions:
-- Check the [API Documentation](#api-documentation) section
-- Review the [Project Structure](#project-structure)
-- Check backend logs: `npm run server`
-- Check frontend console: Browser DevTools (F12)
-
----
-
-**Last Updated**: June 2024
-**Built with ❤️ using React & Express**
